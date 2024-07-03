@@ -25,3 +25,32 @@
 - Install nodemon (npm i nodemon)
 - In package.json define the script run command(like "start": "node index.js")
 - If other then start then we have use this command to run it (npm run name of the script)
+
+### Day 2
+
+## Modules 
+
+- Modules are functions or package
+- To import a module we have to export the module which we want to import
+
+## Importing a module
+
+- Eg: `const name = require('file/package')`
+- Destructuring `const {add,sub} = require('file/package')`
+
+## Exporting a module 
+
+- Two types
+
+# Default export
+
+- `module.exports = {fun1,fun2}`
+
+# Object export
+
+- `exports.add = (a,b) => a+b`
+
+
+## File Handler:
+
+- Refere FileHandler.js
