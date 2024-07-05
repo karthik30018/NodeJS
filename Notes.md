@@ -134,3 +134,93 @@ console.log("Server is running!!"))```
 - /about?name=karthik&id=1 - After ? is a query parameter,where we are passing name and id as parameter and & is used as seperator
 - In node js to use URL we have to download external package from npmjs.com
 - Download URL package.
+
+
+### Day 4
+
+## HTTP Methods
+
+- Get
+- Post
+- Put
+- Patch
+- Delete 
+
+### GET
+
+- When you want to get some data from the server.
+
+### POST
+
+- When you want to send and mutate some data in server.
+- Create a new resources.
+- eg. Form etc.
+
+### PUT
+
+- PUT is used to send data to a server to create/update a resource.
+- Also used to overwrite all fields.
+
+### PATCH
+
+- This request is made when we want to change the existing data.
+- The PATCH is used to replace only the information sent in the call.
+
+### DELETE
+
+- To delete a data.
+
+### Difference between POST and PUT 
+
+- The difference between POST and PUT requests are idempotent. That is, calling the same PUT request multiple times will always produce the same result.
+- In contrast, calling a POST request repeatedly have side effects of creating the same resource multiple times.
+
+
+## Express Js (Framework):
+
+- Fast, unopinionated, minimalist web framework for Node js.
+
+## Versioning in Node js
+
+- Current Express js version - ^4.19.2
+
+- ^ (It is for package.json while installing npm module based on the package.json, it will make sure the 1st part should remain same)- Compatable with version.
+- ~ - it make sure both first and second part remain same while installing npm module based on package.json.
+- If no symbol then the version is fixed.
+
+- 1st part(Major release/ Breaking Update) -> 4  
+  
+- 2nd part((Recommended) bug or security fix)-> 19 When new feature has been added or bug fix
+
+
+- 3rd part(Minor fixes)(optional) -> 2 
+  
+
+## REST API
+
+- RESTfull API or REST API
+- Representational State Transfer(REST API) 
+- Standard rules to follow
+
+# Rules:
+
+# Rule 1:
+
+- ![alt text](RESTArch.png)
+- Server and client(Browser or mobile) are seperate different entities, which does not depends on each other.
+- ie. Server should not depend on client or vice versa.
+- ![alt text](RESTArch1.png)
+  
+- If the client request for the data and the server fetches from DB and process(SSR - Server Side Rendering) it in the html form or any other then it is dependent architecture.
+- It does not support cross-platform 
+- Faster compare to independent due to SSR
+
+- Similarly, if the  client request for the data and the server fetches from DB and sends the raw data(JSon(latest) or xml(oldest)) so the client can do whatever they want on the client side(CSR - Client Side Rendering) it is called Independent architecture.
+- Support cross-platform
+- Due to CSR slower compare to SSR (Because the raw data has to be rendered in client side)
+- Followed by REST API.
+
+# Rule 2:
+
+- Always respect all HTTP request.
+- Eg. Instead of patch request don't use post request to update the existing entry.
