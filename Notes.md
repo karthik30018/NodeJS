@@ -224,3 +224,21 @@ console.log("Server is running!!"))```
 
 - Always respect all HTTP request.
 - Eg. Instead of patch request don't use post request to update the existing entry.
+
+
+### Day 5
+
+## Building a REST API's using NODE JS and EXPRESS JS
+
+- Refer Task.txt contains the details of route which i am creating.
+- For data visit the website named [Mokaroo](https://www.mockaroo.com/)
+- Refer server.js for the code
+- Created a middleware to handle incomming data from the browser.
+
+## POSTMAN 
+
+- To test the API routes
+
+# Status
+
+- 200 - ALL OK
