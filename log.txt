@@ -20,4 +20,8 @@
 1720114602320 : /contact?name=karthik&userId=1 
 1720185216148 : /signup 
  GET1720190231953 : / 
- GET
+ GET1720371524477 : GET : /api/users/10011720371554115 : GET : /api/users/10011720371602509 : GET : /api/users/1001 : ::1
+ 
+ 1720371747145 : GET : /api/users/1001 : ::1 
+ 1720371794712 : GET : /api/users/1001 : ::1 
+ 1720371831791 : GET : /api/users/1001 : ::1

@@ -7,7 +7,12 @@ const PORT = 8000;
 //Middleware - Plugin  (To handel incoming data from browser)
 app.use(express.urlencoded({extended:false}))// It will take the request and convert it into JS object
 
-
+app.use((req,res,next)=>{
+    fs.appendFile('./log.txt',` \n ${Date.now()} : ${req.method} : ${req.path} : ${req.ip}`,(err)=>{
+        next()
+    })
+    
+})
 
 // Routes
 
@@ -45,14 +50,49 @@ app.post('/api/users',(req,res)=>{
 
 app.patch('/api/users:id',(res,req)=>{
     const id = Number(req.params.id);
+    const body = req.body;
+    const userIdx = users.findIndex((user)=> user.id === id);
+    // const updusers = users.replace(userIdx,...body)
+  
+    //Get the deleted user object using splice. Mind we need to get the object and not array as returned by splice method, so '[0]' satisfies this requirement. The resulting object is just for the sake of displaying, you may neglect storing it if you don't want to display.
+    const UpdateUser = users.splice(userIdx,1,body)[0];
+    fs.writeFile('./MOCK_DATA.json',JSON.stringify(UpdateUser),(err,data)=>{
+        return res.json({status:'Successfully updated!'})
+    })
+    
     //TODO - Edit the user with Id
-    return res.json({'status':'pending!'})
+    
 })
 
-app.delete('/api/users:id',(req,res)=>{
-    //TODO - Delete an user based on ID
-    return res.json({'status':'pending!'})
-})
+// app.delete('/api/users:id',(req,res)=>{
+//     const id = Number(req.params.id)
+//     const index = users.findIndex((index)=>index.id === id)
+//     if(index!==-1){
+//         users.splice(index,1);
+//     }
+
+//     //TODO - Delete an user based on ID
+//     return res.json({'status':'Success Removed!'})
+// })
+
+
+app.delete("/api/users/:id", (req, res) => {
+    //Get the id of the user
+    const id = Number(req.params.id);
+  
+    //Find out the index of the user with above id from the array "users"
+    const userIdx = users.findIndex((user)=> user.id === id);
+  
+    //Get the deleted user object using splice. Mind we need to get the object and not array as returned by splice method, so '[0]' satisfies this requirement. The resulting object is just for the sake of displaying, you may neglect storing it if you don't want to display.
+    const delUser = users.splice(userIdx,1)[0];
+  
+    //Write the changes into the json file.
+    fs.writeFile("./MOCK_DATA.json", JSON.stringify(users), (err, data) => {
+      return res.json({ status: "success", delUser });
+    });
+  })
+
+
 
 {/** All the same route can be merged  
 

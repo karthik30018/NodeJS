@@ -242,3 +242,49 @@ console.log("Server is running!!"))```
 # Status
 
 - 200 - ALL OK
+
+
+### Day 6
+
+## Middleware
+
+- If middleware are used then the data sent from the client is first sent to middleware, which will perform some processing on the data then the requset is forwarded to backend.
+- Note: Some time the request can be sent back to client without sending to the server due to some reason.
+- The response from the server is directly sent to client.
+- We can use multiple middleware.
+- For each req and res the middlewares are executed.
+- [Reference](https://expressjs.com/en/guide/using-middleware.html)
+- Middleware functions are functions that have access to the request object (req), the response object (res), and the next middleware function in the application’s request-response cycle. The next middleware function is commonly denoted by a variable named next.
+
+- Middleware functions can perform the following tasks:
+
+- Execute any code.
+- Make changes to the request and the response objects.
+- End the request-response cycle.
+- Call the next middleware function in the stack.
+
+
+# Creating a middleware
+
+- By the help of app.use() we can create middleware.
+- Syntax:
+```
+app.use((req,res,next)=>{
+
+next()
+})
+```
+- next : Reference to the next middleware in the stack
+- If we didn't call the next() function then it won't go to the next function, the execution will stuck there.
+- We can also send the req from one function to another.
+```
+app.use((req,res,next)){
+  req.myName = "Karthik";
+  next()
+}
+
+app.use((req,res,next)=>{
+console.log(req.myName)
+next();
+})
+```
