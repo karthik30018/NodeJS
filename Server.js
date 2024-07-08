@@ -21,6 +21,8 @@ app.get('/',(req,res)=>{
 })
 
 app.get('/api/users',(req,res)=>{
+    res.setHeader('myName','Karthik') //Setting up the headers
+    console.log(req.headers)
     return res.json(users)
 })
 
@@ -35,15 +37,21 @@ app.get('/users',(req,res)=>{
 app.get('/api/users/:id',(req,res)=>{
     const id = Number(req.params.id)
     const user = users.find((user)=>user.id === id)
+    if(!user){
+        return res.status(404).json({"message":"Not found!"})
+    }
     return res.json(user)
 })
 
 
 app.post('/api/users',(req,res)=>{
     const body = req.body;
+    if(!body || !body.first_name || !body.last_name || !body.email || !body.job_title || !body.gender){
+        return res.status(400).json({"message":"All field are required"})
+    }
     users.push({id: users.length +1,...body})
     fs.writeFile('./MOCK_DATA.json',JSON.stringify(users),(err,data)=>{
-        return res.json({status:'Success!',id: users.length})
+        return res.status(201).json({status:'Success!',id: users.length})
     })
    
 })

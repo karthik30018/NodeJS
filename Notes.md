@@ -288,3 +288,42 @@ console.log(req.myName)
 next();
 })
 ```
+
+
+### Day 7
+
+## HTTP Headers
+
+- HTTP headers are an important part of the API request and response as they represent the meta-data associated with the API request and response.
+- Headers carry information for the request and the response body.
+- [built in header list](https://flaviocopes.com/http-request-headers/)
+
+# Note: Always add X to custom headers.
+
+## HTTP Status code:
+
+- [doc](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
+  
+  # Informational Responses(100 - 199)
+  # Successful responses(200 - 299)
+  # Redirection messages(300 - 399)
+  # Client error responses(400 - 499)
+  # Server error responses(500 - 599)
+
+# Standard Response Code
+
+- 200: All OK
+- 201: Created (Post or Put)  when we create something on the server.
+- 202: Accepted
+- 204: No Content
+- 400: Bad request
+- 401: Unauthorized
+- 402: Payment Required
+- 403: Forbidden (If client does not have access rights to the content)
+- 404: Not Found
+- 500: Internal server error
+- 501: Not implemented (If the method is not implemented)
+- 502: Bad gatway
+- 503: Server unavailable
+- 300: Multiple choices
+- 301: Moved Permanently
