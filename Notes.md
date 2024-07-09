@@ -327,3 +327,35 @@ next();
 - 503: Server unavailable
 - 300: Multiple choices
 - 301: Moved Permanently
+
+### Day 8
+
+## MongoDb
+
+- No-SQL document based database.
+- Strong support for aggregation pipes.
+- Works on BSON format.
+- Best for node application.
+
+## Architecture
+
+![alt text](MongoAec.png)
+
+# Some commands:
+
+- mongosh
+- showdbs
+- use <db name>
+- show collection 
+- db.<collection name>.find({})
+- db.<collection name>.insert()
+
+## Connecting MongoDb to Node JS
+
+- Install mongoose
+
+# Mongoose Schema:
+
+- Define schema 
+- create Model to do CRUD operation.
+  
