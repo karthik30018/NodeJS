@@ -79,4 +79,14 @@
  1720542756425 : GET : /api/users/668d5de94499e500f3d9ba33 : ::1 
  1720542760528 : GET : /api/users/668d5de94499e500f3d9ba33 : ::1 
  1720542787570 : GET : /api/users/668d5de94499e500f3d9ba33 : ::1 
- 1720542792500 : PATCH : /api/users/668d5de94499e500f3d9ba33 : ::1
+ 1720542792500 : PATCH : /api/users/668d5de94499e500f3d9ba33 : ::1 
+ 1720631235359 : GET : /api/users : ::1 
+ 1720631260875 : GET : /api/users : ::1 
+ 1720631313845 : POST : /api/users : ::1 
+ 1720631333157 : GET : /users : ::1 
+ 1720631340719 : GET : /api/users : ::1 
+ 1720631351215 : PATCH : /api/users/668ec011e75afe3dc3f6021f : ::1 
+ 1720631356232 : GET : /api/users : ::1 
+ 1720631382247 : GET : /api/users/668ec011e75afe3dc3f6021f : ::1 
+ 1720631388788 : DELETE : /api/users/668ec011e75afe3dc3f6021f : ::1 
+ 1720631394105 : GET : /api/users/668ec011e75afe3dc3f6021f : ::1

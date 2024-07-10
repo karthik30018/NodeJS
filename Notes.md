@@ -359,3 +359,18 @@ next();
 - Define schema 
 - create Model to do CRUD operation.
   
+
+### Day 9
+
+## Model View Controller(MVC):
+
+- Controller manipulate the model.
+- Model updates the view.
+
+### Steps:
+- Create Models
+- Create Routes
+- Create controller
+- create Middleware
+
+-> server.js(app.use('/api/user',userRouter)) -> Routers -> Controller -> Models -> View.
