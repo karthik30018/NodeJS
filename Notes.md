@@ -367,10 +367,17 @@ next();
 - Controller manipulate the model.
 - Model updates the view.
 
-### Steps:
+# Steps:
 - Create Models
 - Create Routes
 - Create controller
 - create Middleware
 
 -> server.js(app.use('/api/user',userRouter)) -> Routers -> Controller -> Models -> View.
+
+### Day 10
+
+## Project
+
+# [LinkShrink](https://github.com/karthik30018/LinkShrink)
+
